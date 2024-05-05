@@ -19,18 +19,18 @@ Follow these instructions to get a copy of the project up and running on your lo
 
 ### Installation
 
-1. Clone the repository to your local machine:
+1. Clone the repository to your local machine: git clone 
 
 
-2. Navigate to the project directory:
+2. Navigate to the project directory: cd FileSearchApp
 
 
-3. Install dependencies:
+3. Install dependencies: npm install
 
 
 ### Usage
 
-1. Start the development server:
+1. Start the development server: npm run 
 
 
 2. Open your web browser and navigate to `http://localhost:8000` to view the application.
