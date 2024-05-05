@@ -19,13 +19,13 @@ Follow these instructions to get a copy of the project up and running on your lo
 
 ### Installation
 
-1. Clone the repository to your local machine: git clone 
+1. Clone the repository to your local machine: `git clone git@github.com:Wassaf001/creative_dalaal.git`
 
 
-2. Navigate to the project directory: cd FileSearchApp
+2. Navigate to the project directory: `cd FileSearchApp`
 
 
-3. Install dependencies: npm install
+3. Install dependencies: `npm install`
 
 
 ### Usage
