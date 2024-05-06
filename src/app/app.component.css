@@ -1,0 +1,22 @@
+#app {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  input[type="file"],
+  input[type="text"] {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  #fileContent {
+    margin-top: 20px;
+    white-space: pre-wrap;
+  }
+  
+  .highlight {
+    background-color: yellow;
+  }
+  
