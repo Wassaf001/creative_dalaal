@@ -4,11 +4,12 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  standalone: true  
+  standalone: true
 })
 export class AppComponent {
   uploadedText: string = '';
   totalOccurrences: number = 0;
+  highlightedContent: string = '';
 
   onFileChange(event: any): void {
     const file = event.target.files[0];
@@ -29,8 +30,7 @@ export class AppComponent {
 
   highlightText(searchTerm: string): void {
     const regex = new RegExp(searchTerm, 'gi');
-    const highlightedText = this.uploadedText.replace(regex, match => `<span class="highlight">${match}</span>`);
-    document.getElementById('fileContent')!.innerHTML = highlightedText;
+    this.highlightedContent = this.uploadedText.replace(regex, match => `<span class="highlight">${match}</span>`);
   }
 
   updateOccurrences(): void {
