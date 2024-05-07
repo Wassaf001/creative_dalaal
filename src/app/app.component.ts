@@ -46,7 +46,7 @@
       const regex = new RegExp(searchTerm.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi');
       this.highlightedContent = this.uploadedText.replace(regex, match => `<span class="highlight">${match}</span>`);
     }
-    
+       
 
     updateOccurrences(): void {
       const searchTerm = (document.getElementById('searchInput') as HTMLInputElement).value;

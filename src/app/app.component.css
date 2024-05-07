@@ -35,8 +35,9 @@ input[type="text"]:focus {
 }
 
 .highlight {
-  background-color: rgba(22, 22, 20, 0.888);
+  background-color: rgba(64, 64, 60, 0.888);
 }
+
 
 #totalWordsContainer {
   margin-top: 10px;
