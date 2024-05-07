@@ -3,6 +3,7 @@
   <input type="file" (change)="onFileChange($event)" accept=".txt">
   <input type="text" (input)="onSearchInput($event)" placeholder="Search" id="searchInput">
   <div>Total Occurrences: <span id="totalOccurrences">{{ totalOccurrences }}</span></div>
+  <!-- binding the innerHTML of fileContent with highlightedContent -->
   <div id="fileContent" [innerHTML]="highlightedContent"></div>
-  <div id="totalWordsContainer">Total Words: <span id="totalWords">{{ totalWords }}</span></div> 
+  <div id="totalWordsContainer">Total Words: <span id="totalWords">{{ totalWords }}</span></div>
 </div>
