@@ -1,6 +1,4 @@
   import { Component, ViewEncapsulation } from '@angular/core';
-  import { SearchHistoryService } from './services/search-history.service';
-  import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
   @Component({
     selector: 'app-root',
@@ -16,16 +14,12 @@
     highlightedContent: string = '';
     searchHistory: string[] = [];
 
-   // constructor(private searchHistoryService: SearchHistoryService) {}
-    //constructor(private sanitizer: DomSanitizer) {}
-
     onFileChange(event: any): void {
       const file = event.target.files[0];
       const reader = new FileReader();
     
       reader.onload = (event: any) => {
         this.uploadedText = event.target.result;
-        // this.updateOccurrences('');
         this.updateTotalWords();
         this.highlightText(''); 
       };
@@ -36,7 +30,12 @@
     onSearchInput(event: Event): void {
       const searchTerm = (event.target as HTMLInputElement).value;
       this.highlightText(searchTerm);
+      if(searchTerm.length!=0){
       this.updateOccurrences();
+      }
+      else{
+        this.totalOccurrences = 0;
+      }
     }
     
 
@@ -48,7 +47,6 @@
     
       const regex = new RegExp(searchTerm.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi');
       this.highlightedContent = this.uploadedText.replace(regex, match => `<span class="highlight">${match}</span>`);
-      console.log(this.highlightedContent);
     }
     
        
