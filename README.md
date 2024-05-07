@@ -30,7 +30,7 @@ Follow these instructions to get a copy of the project up and running on your lo
 
 ### Usage
 
-1. Start the development server: npm run 
+1. Start the development server: `npm run`
 
 
 2. Open your web browser and navigate to `http://localhost:4200` to view the application.
