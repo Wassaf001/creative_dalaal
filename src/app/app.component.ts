@@ -1,11 +1,13 @@
-  import { Component } from '@angular/core';
+  import { Component, ViewEncapsulation } from '@angular/core';
   import { SearchHistoryService } from './services/search-history.service';
+  import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
   @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
-    standalone: true
+    standalone: true,
+    encapsulation: ViewEncapsulation.None
   })
   export class AppComponent {
     uploadedText: string = '';
@@ -14,7 +16,8 @@
     highlightedContent: string = '';
     searchHistory: string[] = [];
 
-    constructor(private searchHistoryService: SearchHistoryService) {}
+   // constructor(private searchHistoryService: SearchHistoryService) {}
+    //constructor(private sanitizer: DomSanitizer) {}
 
     onFileChange(event: any): void {
       const file = event.target.files[0];
@@ -45,7 +48,9 @@
     
       const regex = new RegExp(searchTerm.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi');
       this.highlightedContent = this.uploadedText.replace(regex, match => `<span class="highlight">${match}</span>`);
+      console.log(this.highlightedContent);
     }
+    
        
 
     updateOccurrences(): void {
