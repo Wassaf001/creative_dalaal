@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 function NavBar() {
   const [searchHistory, setSearchHistory] = useState<string[]>([]);
@@ -7,11 +7,11 @@ function NavBar() {
     setSearchHistory([]);
   };
 
-  const handleAddToHistory = (word: string) => {
-    if (!searchHistory.includes(word)) {
-      setSearchHistory([word, ...searchHistory]);
-    }
-  };
+  // const handleAddToHistory = (word: string) => {
+  //   if (!searchHistory.includes(word)) {
+  //     setSearchHistory([word, ...searchHistory]);
+  //   }
+  // };
 
   const handleResetPage = () => {
     window.location.reload();
