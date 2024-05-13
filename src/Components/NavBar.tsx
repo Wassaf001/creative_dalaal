@@ -8,7 +8,6 @@ function NavBar() {
   };
 
   const handleAddToHistory = (word: string) => {
-    // Make sure we don't duplicate search terms
     if (!searchHistory.includes(word)) {
       setSearchHistory([word, ...searchHistory]);
     }

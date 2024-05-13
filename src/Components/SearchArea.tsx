@@ -1,4 +1,3 @@
-// SearchArea.tsx
 import React, { useState } from 'react';
 
 interface SearchAreaProps {
@@ -10,7 +9,8 @@ function SearchArea({ onFileUpload, onSearch }: SearchAreaProps) {
   const [searchWord, setSearchWord] = useState<string>('');
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files[0];
+    if(!event.target || !event.target.files) {return;}
+    const file = event.target.files[0]; 
     if (file && file.type === 'text/plain') {
       onFileUpload(file);
     } else {

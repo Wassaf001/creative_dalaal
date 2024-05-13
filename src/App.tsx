@@ -1,11 +1,11 @@
-// App.tsx
-import React, { useState } from 'react';
+import { useState } from 'react';
+import "./App.css"
 import NavBar from './Components/NavBar';
 import SearchArea from './Components/SearchArea';
 import Para from './Components/Para';
 import Footer from './Components/Footer';
 
-function App() {
+function App() {    
   const [textContent, setTextContent] = useState<string>('');
   const [highlightedContent, setHighlightedContent] = useState<string>('');
   const [totalWords, setTotalWords] = useState<number>(0);
@@ -35,6 +35,7 @@ function App() {
     const regex = new RegExp(`(${word})`, 'gi');
     const count = (textContent.match(regex) || []).length;
     setTotalWords(countWords(textContent));
+    console.log(textContent.replace(regex, '<span class="highlight">$1</span>'));
     setHighlightedContent(textContent.replace(regex, '<span class="highlight">$1</span>'));
     setSearchWordCount(count);
   };
@@ -42,7 +43,7 @@ function App() {
   const [searchWordCount, setSearchWordCount] = useState<number>(0);
 
   return (
-    <div className="container-fluid">
+    <div className="container-fluid background">
       <NavBar />
       <SearchArea onFileUpload={handleFileUpload} onSearch={handleSearch} />
       {(textContent || searchWord) && (
